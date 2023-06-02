@@ -10,6 +10,7 @@
 <script lang="ts" setup>
 import PostService from "@/services/PostService";
 import { onMounted } from "vue";
+
     const service = new PostService()
     const posts = service.getPost()
 
@@ -44,10 +45,14 @@ export default defineComponent({
     text-align-last: left;
     margin: 5px;
     border-bottom: 1px blue solid;
+    width: 100%;
 }
 ul.post-list {
     list-style: none;
     padding: 10px;
+    width: 60vw;
+    height: 75px;
+
 }
 
 </style>
