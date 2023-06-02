@@ -7,7 +7,20 @@
 </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import PostService from "@/services/PostService";
+import { onMounted } from "vue";
+    const service = new PostService()
+    const posts = service.getPost()
+
+    onMounted(async () => {
+        await service.fetchAll()
+    })
+
+
+</script>
+<!-- COMPOSITION API CON SETUP -->
+<!-- <script lang="ts">
 import PostService from "@/services/PostService";
 import { defineComponent, onMounted } from "vue";
 
@@ -23,8 +36,7 @@ export default defineComponent({
         return {posts}
     }
 })
-
-</script>
+</script> -->
 
 <style scoped>
 .post-list li {
