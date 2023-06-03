@@ -1,6 +1,6 @@
 <template>
-<div> 
-<h1>Listado de Post</h1>
+<div > 
+<h1 class="btn btn-danger">Listado de Post</h1>
 <ul class="post-list">
     <li v-for="post in posts" v-bind:key="post.id">{{ post.title }}</li>
 </ul>
