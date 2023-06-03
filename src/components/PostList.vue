@@ -39,13 +39,15 @@ export default defineComponent({
 })
 </script> -->
 
-<style scoped>
+<style scoped lang="scss">
+$red: #ff000f;
 .post-list li {
     padding: 3px;
     text-align-last: left;
     margin: 5px;
     border-bottom: 1px blue solid;
     width: 100%;
+    color: $red;
 }
 ul.post-list {
     list-style: none;
