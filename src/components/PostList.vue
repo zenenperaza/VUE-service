@@ -40,21 +40,23 @@ export default defineComponent({
 </script> -->
 
 <style scoped lang="scss">
+.post-list {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    height: 75px;
 
-.post-list li {
+    li {
     padding: 3px;
     text-align-last: left;
     margin: 5px;
     border-bottom: 1px blue solid;
     width: 100%;
     color: $green;
-}
-ul.post-list {
-    list-style: none;
-    padding: 10px;
-    width: 60vw;
-    height: 75px;
-
+    }
+    li:hover{
+        background-color: lighten($color: #000000, $amount: 10%)
+    }
 }
 
 </style>
