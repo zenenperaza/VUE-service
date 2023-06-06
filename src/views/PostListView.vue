@@ -2,7 +2,11 @@
 <div > 
 <h1 class="btn btn-danger">Listado de Post</h1>
 <ul class="post-list">
-    <li v-for="post in posts" v-bind:key="post.id">{{ post.title }}</li>
+    <li v-for="post in posts" v-bind:key="post.id">
+        <router-link v-bind:to="{name: 'PostDetail', params: {id: post.id}}">
+        {{ post.title }}
+        </router-link>
+    </li>
 </ul>
 </div>
 </template>
@@ -12,7 +16,7 @@ import PostService from "@/services/PostService";
 import { onMounted } from "vue";
 
     const service = new PostService()
-    const posts = service.getPost()
+    const posts = service.getPosts()
 
     onMounted(async () => {
         await service.fetchAll()
@@ -52,11 +56,22 @@ export default defineComponent({
     margin: 5px;
     border-bottom: 1px blue solid;
     width: 100%;
-    color: $green;
+    color: #ccc;
+    cursor: pointer;
+
+    a{
+        text-decoration: none;
+        color: #ccc;
+        cursor: pointer;
     }
-    li:hover{
-        background-color: lighten($color: #000000, $amount: 10%)
+
+    a:hover{
+        color: $primaryColor;
     }
+   
+
+    }
+
 }
 
 </style>
